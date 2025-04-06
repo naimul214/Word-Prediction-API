@@ -4,7 +4,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 # Pre-download NLTK punkt_tab
 RUN python -c "import nltk; nltk.download('punkt_tab')"
-COPY next_word_model.h5 .
+COPY next_word_model.keras . 
 COPY vocab.json .
 COPY app.py .
 EXPOSE 8000

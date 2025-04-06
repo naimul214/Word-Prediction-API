@@ -7,14 +7,16 @@ from nltk.tokenize import word_tokenize
 app = FastAPI()
 
 # Load model and vocabulary
-model = tf.keras.models.load_model('next_word_model.h5')
+model = tf.keras.models.load_model('next_word_model.keras') 
 with open('vocab.json', 'r') as f:
     vocab = json.load(f)
 reverse_vocab = {idx: word for word, idx in vocab.items()}
 
+# Download NLTK resources at startup
+nltk.download('punkt_tab')
+
 @app.get("/predict_next_word")
 async def predict_next_word(input_text: str):
-    nltk.download('punkt_tab')
     tokens = word_tokenize(input_text.lower())
     input_ids = [vocab.get(token, vocab['<unk>']) for token in tokens]
     if not input_ids:
