@@ -1,0 +1,24 @@
+{
+  "family": "next-word-task",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+      {
+          "name": "next-word-container",
+          "image": "730335357572.dkr.ecr.us-east-1.amazonaws.com/next-word-api:latest",
+          "essential": true,
+          "portMappings": [
+              {
+                  "containerPort": 8000,
+                  "hostPort": 8000,
+                  "protocol": "tcp"
+              }
+          ],
+          "memory": 512,
+          "cpu": 256
+      }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "memory": "512",
+  "cpu": "256",
+  "executionRoleArn": "arn:aws:iam::730335357572:role/ecsTaskExecutionRole"
+}
