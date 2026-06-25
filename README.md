@@ -139,16 +139,6 @@ aws ecs create-service \
 
 ---
 
-## Results & Performance
-
-> [!NOTE]
-> *Developer Note: Replace this section with actual test results or performance metrics.*
-> *   **Model Performance**: Top-1 Accuracy: `XX%`, Perplexity: `XX`.
-> *   **Latency**: Average API response time: `XX ms` under load testing.
-> *   **Inference Hardware**: Evaluated on CPU (AWS Fargate 0.25 vCPU / 0.5 GB RAM) at average `XX` requests per second.
-
----
-
 ## Limitations & Future Work
 
 *   **Fixed Sequence Context**: The model uses a fixed sequence window (`maxlen=10`) and padding, which prevents it from utilizing long-term context beyond 10 preceding words.
