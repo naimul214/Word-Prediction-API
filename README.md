@@ -31,7 +31,7 @@ Steps to Set Up, Dockerize, and Deploy the Next-Word Prediction API
 - Git (optional): Install from git-scm.com. Check with: git --version
 
 2. Navigate to Project Directory
-- cd /d D:\School\Computer Vision\Assignment 3\Word-Prediction-API
+- cd ~\Word-Prediction-API
 
 3. Install Python Dependencies
 - pip install -r requirements.txt
